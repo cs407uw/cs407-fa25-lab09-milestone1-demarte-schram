@@ -37,12 +37,19 @@ class Ball(
             accY = yAcc
             return
         }
-        accX
-        accY
-        posX
-        posY
-        velocityX
-        velocityY
+
+        val newVelocityX = velocityX + 0.5f * (accX + xAcc) * dT
+        val newPosX = velocityX * dT + (1.0f / 6.0f) * dT * dT * (3.0f * accX + xAcc)
+
+        val newVelocityY = velocityY + 0.5f * (accY + yAcc) * dT
+        val newPosY = velocityY * dT + (1.0f / 6.0f) * dT * dT * (3.0f * accY + yAcc)
+
+        accX = xAcc
+        accY = yAcc
+        posX += newPosX
+        posY += newPosY
+        velocityX = newVelocityX
+        velocityY = newVelocityY
         // v1 = v(t1) = v0 + 1/2 (a1 + a0)(t1 − t0)
         // v0 · (t1 − t0) + 1/6 · (t1 − t0)^2 · (3a0 + a1)
 
