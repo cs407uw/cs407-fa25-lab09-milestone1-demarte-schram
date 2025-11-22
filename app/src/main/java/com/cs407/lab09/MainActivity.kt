@@ -65,6 +65,7 @@ fun GameScreen(viewModel: BallViewModel) {
     // TODO: Initialize the sensorManager
     val sensorManager = remember {
         // ... getSystemService ...
+
     }
 
     // TODO: Get the gravitySensor
