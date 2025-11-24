@@ -72,18 +72,22 @@ class Ball(
         if (backgroundWidth <= ballRight) {
             accX = 0f
             velocityX = 0f
+            posX = backgroundWidth - ballSize
         }
         if (ballLeft <= 0f) {
             accX = 0f
             velocityX = 0f
+            posX = 1f
         }
         if (backgroundHeight <= ballBottom) {
             accY = 0f
             velocityY = 0f
+            posY = backgroundHeight - ballSize
         }
         if (ballTop <= 0f) {
             accY = 0f
             velocityY = 0f
+            posY = 1f
         }
 
     }
@@ -96,8 +100,8 @@ class Ball(
         // TODO: implement the reset function
         // (Reset posX, posY, velocityX, velocityY, accX, accY, isFirstUpdate)
 
-        posY = backgroundHeight / 2
-        posX = backgroundWidth / 2
+        posY = (backgroundHeight / 2) - ballSize / 2
+        posX = (backgroundWidth / 2) - ballSize / 2
         velocityY = 0f
         velocityX = 0f
         accX = 0f
