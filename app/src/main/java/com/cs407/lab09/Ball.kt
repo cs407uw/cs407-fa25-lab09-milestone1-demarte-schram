@@ -64,10 +64,10 @@ class Ball(
         // TODO: implement the checkBoundaries function
         // (Check all 4 walls: left, right, top, bottom)
 
-        var ballRight = posX + ballSize/2
-        var ballTop = posY + ballSize/2
-        var ballBottom = posY - ballSize/2
-        var ballLeft = posX - ballSize/2
+        var ballRight = posX + ballSize
+        var ballTop = posY
+        var ballBottom = posY + ballSize
+        var ballLeft = posX
 
         if (backgroundWidth <= ballRight) {
             accX = 0f
